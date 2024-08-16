@@ -29,7 +29,8 @@ namespace OpenUtau.Core {
                 };
             }
             return new List<string> {
-                "cpu"
+                "cpu",
+                "rocm"
             };
         }
 
@@ -73,6 +74,8 @@ namespace OpenUtau.Core {
                 case "coreml":
                     options.AppendExecutionProvider_CoreML(CoreMLFlags.COREML_FLAG_ENABLE_ON_SUBGRAPH);
                     break;
+                case "rocm";
+                break;
             }
             return options;
         }
