@@ -75,6 +75,9 @@ namespace OpenUtau.Core {
                     options.AppendExecutionProvider_CoreML(CoreMLFlags.COREML_FLAG_ENABLE_ON_SUBGRAPH);
                     break;
                 case "rocm";
+     OrtROCMProviderOptions rocm_options;
+     rocm_options.device_id = Preferences.Default.OnnxGpu;
+       options.AppendExecutionProvider_ROCm(rocm_options);
                 break;
             }
             return options;
